@@ -1,7 +1,12 @@
 package singleton;
 
 import builder.Film;
+import factoryMethod.FilmConcreteFactory;
+import factoryMethod.FilmFactory;
 import repository.ArchivioVideoteca;
+import strategy.FiltroStrategy;
+import strategy.OrdinamentoStrategy;
+import strategy.RicercaStrategy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,6 +93,7 @@ public class Videoteca {
 
     //controllare
     public Film ottieniFilmDaId(String titolo, String regista, int anno) {
+        FilmFactory factory = new FilmConcreteFactory();
         Film cercato = factory.creaFilm(titolo,regista,anno,"",null,null);
         for (Film f : collezione) {
             if (f.equals(cercato)) {
