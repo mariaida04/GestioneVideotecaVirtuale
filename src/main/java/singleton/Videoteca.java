@@ -47,14 +47,6 @@ public class Videoteca {
             return false;
         }
 
-        boolean identificativiDiversi = !(titolo.equalsIgnoreCase(nuovo.getTitolo()) &&
-                regista.equalsIgnoreCase(nuovo.getRegista()) &&
-                anno == nuovo.getAnno());
-
-        if(identificativiDiversi && collezione.contains(nuovo)) {
-            return false;
-        }
-
         int index = collezione.indexOf(filmDaModificare);
         collezione.set(index,nuovo);
         ArchivioVideoteca.salva(collezione);

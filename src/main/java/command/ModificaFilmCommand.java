@@ -20,6 +20,6 @@ public class ModificaFilmCommand implements Command {
 
     @Override
     public void esegui() {
-        videoteca.modificaFilm(titolo,regista,anno, film);
+        videoteca.modificaFilm(titolo,regista,anno,film);
     }
 }

@@ -27,7 +27,7 @@ public class Film {
             if (titolo == null || titolo.isBlank())
                 throw new IllegalArgumentException("Titolo obbligatorio");
             if (regista == null || regista.isBlank())
-                throw new IllegalArgumentException("Autore obbligatorio");
+                throw new IllegalArgumentException("Regista obbligatorio");
             if (anno == null)
                 throw new IllegalArgumentException("Anno obbligatorio");
             int annoCorrente = java.time.Year.now().getValue();

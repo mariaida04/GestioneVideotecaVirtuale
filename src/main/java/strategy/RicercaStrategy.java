@@ -4,5 +4,5 @@ import builder.Film;
 import java.util.List;
 
 public interface RicercaStrategy {
-    List<Film> cerca(List<Film> lib);
+    List<Film> cerca(List<Film> lista);
 }
