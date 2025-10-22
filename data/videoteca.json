@@ -1,0 +1,47 @@
+[
+  {
+    "titolo": "La La Land",
+    "regista": "Damien Chazelle",
+    "anno": 2016,
+    "genere": "Romantico",
+    "valutazione": "QUATTRO_STELLE",
+    "stato": "VISTO"
+  },
+  {
+    "titolo": "Titanic",
+    "regista": "James Cameron",
+    "anno": 1997,
+    "genere": "Drammatico",
+    "valutazione": "CINQUE_STELLE",
+    "stato": "IN_VISIONE"
+  },
+  {
+    "titolo": "Avatar",
+    "regista": "James Cameron",
+    "anno": 2009,
+    "genere": "Fantascienza",
+    "valutazione": "TRE_STELLE",
+    "stato": "DA_VEDERE"
+  },
+  {
+    "titolo": "Jurassic Park",
+    "regista": "Steven Spielberg",
+    "anno": 1993,
+    "genere": "Fantascienza"
+  },
+  {
+    "titolo": "Avengers: Endgame",
+    "regista": "Anthony \u0026 Joe Russo",
+    "anno": 2019,
+    "genere": "Fantascienza",
+    "stato": "DA_VEDERE"
+  },
+  {
+    "titolo": "Interstellar",
+    "regista": "Christopher Nolan",
+    "anno": 2014,
+    "genere": "Fantascienza",
+    "valutazione": "QUATTRO_STELLE",
+    "stato": "VISTO"
+  }
+]

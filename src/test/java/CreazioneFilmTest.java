@@ -39,7 +39,7 @@ public class CreazioneFilmTest {
     }
 
     @Test
-    public void testCreazioneLibroTitoloNull() {
+    public void testCreazioneFilmTitoloNull() {
         FilmFactory factory = new FilmConcreteFactory();
         Exception e = assertThrows(IllegalArgumentException.class, () -> {
             factory.creaFilm(null, "James Cameron", 1997,"Drammatico",Valutazione.CINQUE_STELLE, StatoVisione.IN_VISIONE);
@@ -49,7 +49,7 @@ public class CreazioneFilmTest {
     }
 
     @Test
-    public void testCreazioneLibroRegistaNull() {
+    public void testCreazioneFilmRegistaNull() {
         FilmFactory factory = new FilmConcreteFactory();
         Exception e = assertThrows(IllegalArgumentException.class, () -> {
             factory.creaFilm("Titanic", null, 1997,"Drammatico",Valutazione.CINQUE_STELLE, StatoVisione.IN_VISIONE);

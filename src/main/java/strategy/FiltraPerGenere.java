@@ -14,12 +14,18 @@ public class FiltraPerGenere implements FiltroStrategy {
     @Override
     public List<Film> filtra(List<Film> lista) {
         List<Film> ret = new ArrayList<>();
-        for(Film f : lista) {
-            if (f.getGenere().toLowerCase().replaceAll("\\p{Punct}", "").replaceAll("[\\s.-]", "")
-                    .contains(genere.toLowerCase().replaceAll("\\p{Punct}", "").replaceAll("[\\s.-]", ""))) {
+        for (Film f : lista) {
+            if (normalizza(f.getGenere()).contains(normalizza(genere))) {
                 ret.add(f);
             }
         }
         return ret;
+    }
+
+    private String normalizza(String s) {
+        if (s == null) {
+            return "";
+        }
+        return s.toLowerCase().replaceAll("\\p{Punct}", "").replaceAll("[\\s.-]", "");
     }
 }

@@ -54,6 +54,6 @@ public class FiltraPerGenereTest {
         FiltroStrategy strategy = new FiltraPerGenere("azione");
         List<Film> risultato = strategy.filtra(lista);
 
-        assertTrue(risultato.isEmpty(), "Nessun libro dovrebbe essere presente in quanto il genere è inesistente.");
+        assertTrue(risultato.isEmpty(), "Nessun film dovrebbe essere presente in quanto il genere è inesistente.");
     }
 }

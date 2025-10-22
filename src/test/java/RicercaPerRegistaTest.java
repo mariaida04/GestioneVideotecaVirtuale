@@ -7,13 +7,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import strategy.RicercaPerRegista;
 import strategy.RicercaStrategy;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class RicercaPerRegistaTest {
     private FilmFactory factory;
@@ -38,7 +34,7 @@ public class RicercaPerRegistaTest {
     }
 
     @Test
-    public void testRicercaAutore() {
+    public void testRicercaRegista() {
         RicercaStrategy strategy = new RicercaPerRegista("james cameron");
         List<Film> risultato = strategy.cerca(lista);
 
@@ -51,7 +47,7 @@ public class RicercaPerRegistaTest {
     }
 
     @Test
-    public void testRicercaAutoreNonPresente() {
+    public void testRicercaRegistaNonPresente() {
         RicercaStrategy strategy = new RicercaPerRegista("Quentin Tarantino");
         List<Film> risultato = strategy.cerca(lista);
 
