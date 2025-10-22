@@ -15,11 +15,17 @@ public class RicercaPerTitolo implements RicercaStrategy {
     public List<Film> cerca(List<Film> lista) {
         List<Film> ret = new ArrayList<>();
         for (Film f : lista) {
-            if (f.getTitolo().toLowerCase().replaceAll("\\p{Punct}", "").replaceAll("[\\s.-]", "")
-                    .contains(titolo.toLowerCase().replaceAll("\\p{Punct}", "").replaceAll("[\\s.-]", ""))) {
+            if (normalizza(f.getTitolo()).contains(normalizza(titolo))) {
                 ret.add(f);
             }
         }
         return ret;
+    }
+
+    private String normalizza(String s) {
+        if (s == null) {
+            return "";
+        }
+        return s.toLowerCase().replaceAll("\\p{Punct}", "").replaceAll("[\\s.-]", "");
     }
 }

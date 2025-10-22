@@ -15,13 +15,18 @@ public class RicercaPerRegista implements RicercaStrategy {
     public List<Film> cerca(List<Film> lista) {
         List<Film> ret = new ArrayList<>();
         for (Film f : lista) {
-            if ((f.getRegista().toLowerCase().replaceAll("\\p{Punct}", "")
-                    .replaceAll("[\\s.-]", "")
-                    .contains(regista.toLowerCase().replaceAll("\\p{Punct}", "")
-                            .replaceAll("[\\s.-]", "")))) {
+            if (normalizza(f.getRegista()).contains(normalizza(regista))) {
                 ret.add(f);
             }
         }
         return ret;
     }
+
+    private String normalizza(String s) {
+        if (s == null) {
+            return "";
+        }
+        return s.toLowerCase().replaceAll("\\p{Punct}", "").replaceAll("[\\s.-]", "");
+    }
+
 }
