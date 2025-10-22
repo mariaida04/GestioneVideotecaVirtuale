@@ -11,7 +11,6 @@ import factoryMethod.FilmConcreteFactory;
 import factoryMethod.FilmFactory;
 import singleton.Videoteca;
 import strategy.*;
-
 import javax.swing.*;
 import java.util.List;
 
