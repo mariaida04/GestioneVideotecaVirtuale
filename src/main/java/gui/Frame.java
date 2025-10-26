@@ -300,17 +300,20 @@ public class Frame extends JFrame {
         form.add(statoBox);
 
         int risultato = JOptionPane.showConfirmDialog(this,form,"Dati film", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-
         if (risultato == JOptionPane.OK_OPTION) {
-            int annoInserito;
-            try {
-                annoInserito = Integer.parseInt(annoField.getText().trim());
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(this, "Anno non valido","Errore",JOptionPane.ERROR_MESSAGE);
-                return null;
+            String annoTesto = annoField.getText().trim();
+            Integer annoInserito = null;
+            if(!annoTesto.isEmpty()) {  //controlli per l'anno: se vuoto, viene restituito null; se errato viene mostrato l'errore, altrimenti viene passato come Integer
+                try {
+                    annoInserito = Integer.parseInt(annoTesto);
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(this, "Anno non valido. Inserisci un numero intero.", "Errore", JOptionPane.ERROR_MESSAGE);
+                    return null;
+                }
             }
 
-            return new FilmFormResult(titoloField.getText().trim(),
+            return new FilmFormResult(
+                    titoloField.getText().trim(),
                     registaField.getText().trim(),
                     annoInserito,
                     genereField.getText().trim(),

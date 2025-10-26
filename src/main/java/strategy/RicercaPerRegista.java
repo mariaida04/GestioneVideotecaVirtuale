@@ -28,5 +28,4 @@ public class RicercaPerRegista implements RicercaStrategy {
         }
         return s.toLowerCase().replaceAll("\\p{Punct}", "").replaceAll("[\\s.-]", "");
     }
-
 }

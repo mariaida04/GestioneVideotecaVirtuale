@@ -21,7 +21,7 @@
     "anno": 2009,
     "genere": "Fantascienza",
     "valutazione": "TRE_STELLE",
-    "stato": "DA_VEDERE"
+    "stato": "VISTO"
   },
   {
     "titolo": "Jurassic Park",
@@ -42,6 +42,14 @@
     "anno": 2014,
     "genere": "Fantascienza",
     "valutazione": "QUATTRO_STELLE",
+    "stato": "VISTO"
+  },
+  {
+    "titolo": "Oppenheimer",
+    "regista": "Christopher Nolan",
+    "anno": 2023,
+    "genere": "Storico",
+    "valutazione": "TRE_STELLE",
     "stato": "VISTO"
   }
 ]
