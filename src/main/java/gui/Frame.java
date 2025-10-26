@@ -1,7 +1,6 @@
 package gui;
 
 import builder.Film;
-import singleton.Videoteca;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
@@ -35,7 +34,7 @@ public class Frame extends JFrame {
 
         //pulsante per visualizzare la videoteca
         JButton visualizzaButton = new JButton("Visualizza videoteca");
-        visualizzaButton.addActionListener(e -> mostraVideoteca());
+        visualizzaButton.addActionListener(e -> controller.mostraVideoteca());
 
         aggiungi = new JButton("Aggiungi film");
         rimuovi = new JButton("Rimuovi film");
@@ -59,6 +58,8 @@ public class Frame extends JFrame {
         };
 
         tabella = new JTable(tableModel);
+        tabella.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);      //ridimensionamento automatico della tabella
+        tabella.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);  //selezione di una sola riga per volta nella tabella
         JTableHeader header = tabella.getTableHeader();
         header.setBackground(Color.LIGHT_GRAY);
         header.setFont(new Font("Arial", Font.BOLD, 14));
@@ -132,7 +133,6 @@ public class Frame extends JFrame {
         ordinaButton.addActionListener(e -> gestioneOrdinamento());
         filtraButton.addActionListener(e -> gestioneFiltro());
 
-        mostraVideoteca();
     }
 
     public void setController(VideotecaController controller) {
@@ -258,11 +258,6 @@ public class Frame extends JFrame {
                 tableModel.addRow(riga);
             }
         }
-    }
-
-    //per mostrare tutta la videoteca
-    public void mostraVideoteca() {
-        mostraFilm(Videoteca.getInstance().getCollezione());
     }
 
     //metodo ausiliario per costruire il form

@@ -34,7 +34,7 @@ public class VideotecaController {
             Command comando = new AggiungiFilmCommand(Videoteca.getInstance(), film);
             comando.esegui();
 
-            frame.mostraVideoteca();
+            mostraVideoteca();
         } catch (IllegalArgumentException e) {
             JOptionPane.showMessageDialog(frame, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
@@ -50,7 +50,7 @@ public class VideotecaController {
         if (daRimuovere != null) {
             Command command = new RimuoviFilmCommand(videoteca, daRimuovere);
             command.esegui();
-            frame.mostraVideoteca();
+            mostraVideoteca();
         }
         else {
             JOptionPane.showMessageDialog(frame, "Nessun film trovato con i parametri inseriti.", "Film non trovato", JOptionPane.WARNING_MESSAGE);
@@ -87,7 +87,7 @@ public class VideotecaController {
             Command command = new ModificaFilmCommand(videoteca, modificato, titoloOrig, registaOrig, annoOrig);
             command.esegui();
 
-            frame.mostraVideoteca();
+            mostraVideoteca();
         }
         catch (IllegalArgumentException e) {
             JOptionPane.showMessageDialog(frame, "Errore: " + e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
@@ -123,10 +123,9 @@ public class VideotecaController {
         List<Film> risultati = Videoteca.getInstance().ricercaStrategy(strategia);
         if (risultati.isEmpty()) {
             JOptionPane.showMessageDialog(frame, "Nessun film trovato.", "Risultato ricerca", JOptionPane.INFORMATION_MESSAGE);
+            return;
         }
-        else {
-            frame.mostraFilm(risultati);
-        }
+        frame.mostraFilm(risultati);
     }
 
     public void ordina(String criterio) {
@@ -189,10 +188,9 @@ public class VideotecaController {
         List<Film> risultato = Videoteca.getInstance().filtroStrategy(strategia);
         if (risultato.isEmpty()) {
             JOptionPane.showMessageDialog(frame, "Nessun film trovato.", "Risultato filtraggio",JOptionPane.INFORMATION_MESSAGE);
+            return;
         }
-        else {
-            frame.mostraFilm(risultato);
-        }
+        frame.mostraFilm(risultato);
     }
 
     //per controllare se il valore inserito manualmente dall'utente abbia corrispondenza con uno degli stati
@@ -213,5 +211,9 @@ public class VideotecaController {
             default:
                 return null;
         }
+    }
+
+    public void mostraVideoteca() {
+        frame.mostraFilm(Videoteca.getInstance().getCollezione());
     }
 }

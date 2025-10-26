@@ -9,6 +9,7 @@ public class VideotecaLauncher {
             Frame frame = new Frame();
             VideotecaController controller = new VideotecaController(frame);
             frame.setController(controller);
+            controller.mostraVideoteca();
             frame.setVisible(true);
         });
     }
