@@ -18,7 +18,7 @@ public class Videoteca {
         this.collezione = ArchivioVideoteca.carica();
     }
 
-    public static Videoteca getInstance(){
+    public static synchronized Videoteca getInstance(){
         if (instance == null) {
             instance = new Videoteca();
         }
