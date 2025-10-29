@@ -195,15 +195,11 @@ public class VideotecaController {
 
     //per controllare se il valore inserito manualmente dall'utente abbia corrispondenza con uno degli stati
     private StatoVisione convertiStato(String input) {
-        input = input.trim().toLowerCase();
+        input = input.trim().toLowerCase().replaceAll("\\s+","").replaceAll("_","");
 
         switch (input) {
-            case "da vedere":
-            case "da_vedere":
             case "davedere":
                 return StatoVisione.DA_VEDERE;
-            case "in visione":
-            case "in_visione":
             case "invisione":
                 return StatoVisione.IN_VISIONE;
             case "visto":
