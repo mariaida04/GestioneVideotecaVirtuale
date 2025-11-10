@@ -21,7 +21,6 @@ public class FiltraPerStatoVisioneTest {
 
     @BeforeEach
     public void listaFilm() {
-
         factory = new FilmConcreteFactory();
         f1 = factory.creaFilm("La La Land", "Damien Chazelle", 2016,"Romantico", Valutazione.CINQUE_STELLE, StatoVisione.IN_VISIONE);
         f2 = factory.creaFilm("Titanic", "James Cameron", 1997,"Drammatico",Valutazione.CINQUE_STELLE,StatoVisione.VISTO);
@@ -37,9 +36,9 @@ public class FiltraPerStatoVisioneTest {
         lista.add(f5);
     }
 
+    //verifica che solo i film corrispondenti allo stato scelto siano contenuti nella lista
     @Test
     public void testFiltroStato() {
-
         FiltroStrategy strategy = new FiltraPerStatoVisione(StatoVisione.IN_VISIONE);
         List<Film> risultato = strategy.filtra(lista);
 
@@ -51,9 +50,9 @@ public class FiltraPerStatoVisioneTest {
         assertTrue(risultato.contains(f5));
     }
 
+    //verifica se la lista dei film corrispondenti a uno stato non presente è vuota
     @Test
     public void testFiltroStatoNonPresente() {
-
         FiltroStrategy strategy = new FiltraPerStatoVisione(StatoVisione.DA_VEDERE);
         List<Film> risultato = strategy.filtra(lista);
 

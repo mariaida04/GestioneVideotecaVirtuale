@@ -193,7 +193,7 @@ public class VideotecaController {
         frame.mostraFilm(risultato);
     }
 
-    //per controllare se il valore inserito manualmente dall'utente abbia corrispondenza con uno degli stati
+    //per controllare se il valore inserito manualmente dall'utente ha corrispondenza con uno degli stati
     private StatoVisione convertiStato(String input) {
         input = input.trim().toLowerCase().replaceAll("\\s+","").replaceAll("_","");
 

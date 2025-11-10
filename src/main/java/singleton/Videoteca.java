@@ -83,7 +83,6 @@ public class Videoteca {
         ArchivioVideoteca.salva(collezione);
     }
 
-    //controllare
     public Film ottieniFilmDaId(String titolo, String regista, int anno) {
         FilmFactory factory = new FilmConcreteFactory();
         Film cercato = factory.creaFilm(titolo,regista,anno,"",null,null);

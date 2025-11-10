@@ -20,7 +20,6 @@ public class FiltraPerGenereTest {
 
     @BeforeEach
     public void listaFilm() {
-
         factory = new FilmConcreteFactory();
         f1 = factory.creaFilm("La La Land", "Damien Chazelle", 2016,"Romantico", Valutazione.CINQUE_STELLE, StatoVisione.IN_VISIONE);
         f2 = factory.creaFilm("Titanic", "James Cameron", 1997,"Drammatico",Valutazione.CINQUE_STELLE,StatoVisione.VISTO);
@@ -37,7 +36,6 @@ public class FiltraPerGenereTest {
     //verifica che solo i film corrispondenti al genere scelto siano contenuti nella lista
     @Test
     public void testFiltroGenere() {
-
         FiltroStrategy strategy = new FiltraPerGenere("fantascienza");
         List<Film> risultato = strategy.filtra(lista);
 
